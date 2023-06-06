@@ -32,6 +32,14 @@ const socials = [
   },
 ];
 
+const navItem = socials.map((social) => {
+  return (
+    <a href={social.url}>
+      <FontAwesomeIcon icon={social.icon} size="2x" />
+    </a>
+  );
+});
+
 const Header = () => {
   const handleClick = (anchor) => () => {
     const id = `${anchor}-section`;
@@ -64,13 +72,12 @@ const Header = () => {
           alignItems="center"
         >
           <nav>
-            <a href={socials.url.faEnvelope}>
-                <FontAwesomeIcon icon={socials.icon} size="2x" /> 
-            </a>
+            <HStack spacing={8}>{navItem}</HStack>
           </nav>
           <nav>
             <HStack spacing={8}>
-              {/* Add links to Projects and Contact me section */}
+              <a onClick={handleClick("projects-section")}>Projects</a>
+              <a onClick={handleClick("contactme")}>Contact Me</a>
             </HStack>
           </nav>
         </HStack>
