@@ -7,7 +7,13 @@ const Card = ({ title, description, imageSrc }) => {
   // Implement the UI for the Card component according to the instructions.
   // You should be able to implement the component with the elements imported above.
   // Feel free to import other UI components from Chakra UI if you wish to.
-  return null;
+  return (
+    <HStack>
+      <Image src={imageSrc}/>
+      <Heading>{title}</Heading>
+      <Text>{description}</Text>
+    </HStack>
+  );
 };
 
 export default Card;
