@@ -6,6 +6,7 @@ import {
   Text,
   VStack,
   Card,
+  Stack
 } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -19,12 +20,14 @@ const Cards = ({ title, description, imageSrc }) => {
     <Card>
       <CardBody>
         <Image src={imageSrc} />
-        <Heading>{title}</Heading>
-        <Text>{description}</Text>
-        <HStack>
-          <Text>See More</Text>
-          <FontAwesomeIcon icon={faArrowRight} size="1x" />
-        </HStack>
+        <Stack mt='6' spacing='3'> 
+          <Heading size="md">{title}</Heading>
+          <Text>{description}</Text>
+          <HStack>
+            <Text>See More</Text>
+            <FontAwesomeIcon icon={faArrowRight} size="1x" />
+          </HStack>
+        </Stack>
       </CardBody>
     </Card>
   );
