@@ -25,11 +25,12 @@ const LandingSection = () => {
     initialValues: {
       firstName: "",
       email: "",
-      tpye: "",
+      type: "",
       comment: ""
     },
-    onSubmit: (values) => {
-      useSubmit();
+    onSubmit: (values, {setSubmitting}) => {
+      alert(JSON.stringify(values, null, 2));
+      setSubmitting(false);
     },
     validationSchema: Yup.object({}),
   });
@@ -46,7 +47,7 @@ const LandingSection = () => {
           Contact me
         </Heading>
         <Box p={6} rounded="md" w="100%">
-          <form>
+          <form onSubmit={formik.handleSubmit}>
             <VStack spacing={4}>
               <FormControl isInvalid={false}>
                 <FormLabel htmlFor="firstName">Name</FormLabel>
