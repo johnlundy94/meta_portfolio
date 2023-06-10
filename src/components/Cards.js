@@ -4,7 +4,6 @@ import {
   HStack,
   Image,
   Text,
-  VStack,
   Card,
   Stack
 } from "@chakra-ui/react";
